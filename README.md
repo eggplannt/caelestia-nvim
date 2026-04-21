@@ -22,29 +22,39 @@ https://github.com/user-attachments/assets/5db01d6e-9c98-4f82-8b00-3a397d6207a5
 
 ## Installation
 
-### Manual Installation
+### Using the Install Script (Recommended)
 
-1. Clone this repository to your Neovim configuration directory:
+1. Clone this repository:
 
 ```bash
-git clone https://github.com/yourusername/caelestia-nvim ~/.config/nvim/caelestia-nvim
+git clone https://github.com/atdma/caelestia-nvim
+cd caelestia-nvim
 ```
 
-2. Add the plugin to your Neovim configuration (`~/.config/nvim/init.lua` or `~/.config/nvim/init.vim`):
+2. Run the installation script:
 
-**For Lua configuration:**
+```bash
+./install.sh
+```
+
+This will automatically copy the necessary files into your standard Neovim package directory (`~/.local/share/nvim/site/pack/plugins/start/caelestia-nvim`).
+
+3. Add the setup call to your Neovim configuration (`~/.config/nvim/init.lua`):
+
 ```lua
-vim.opt.runtimepath:prepend("~/.config/nvim/caelestia-nvim")
 require("caelestia").setup()
 ```
 
-**For Vimscript configuration:**
-```vim
-set runtimepath^=~/.config/nvim/caelestia-nvim
-lua require("caelestia").setup()
-```
+### Using a Plugin Manager (e.g., Lazy.nvim)
 
-Alternatively, if you're using a plugin manager structure, you can clone it to your plugins directory and add it to your runtimepath accordingly.
+```lua
+{
+  "atdma/caelestia-nvim",
+  config = function()
+    require("caelestia").setup()
+  end
+}
+```
 
 ## How It Works
 
@@ -98,7 +108,7 @@ If you see errors about file watching:
 
 MIT License
 
-Copyright (c) 2024
+Copyright (c) 2026 atdma
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
