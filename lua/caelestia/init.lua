@@ -24,6 +24,7 @@ local function read_scheme()
   for name, value in pairs(scheme.colours) do
     colors[name] = "#" .. value
   end
+  colors.mode = scheme.mode
 
   return colors
 end

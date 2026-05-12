@@ -5,7 +5,7 @@ function M.apply(colors)
 	if vim.fn.exists("syntax_on") then
 		vim.cmd("syntax reset")
 	end
-	vim.o.background = "dark"
+	vim.o.background = colors.mode
 	vim.g.colors_name = "caelestia"
 
 	-- Core UI highlights using Material Design 3 tokens
